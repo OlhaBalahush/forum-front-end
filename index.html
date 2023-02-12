@@ -10,9 +10,10 @@
     <title>forum</title>
 </head>
 <body>
+    <div id="gray-screen" class="gray-screen"></div>
     <div id="header">
         <button id="btn-home" onclick="onHomeButton()">
-            <img src="logo.png">
+            <img id="logo" src="static/materials/logo.png">
         </button>
         <button id="btn-log-in" class="button">
             <span>log in</span>
@@ -37,10 +38,26 @@
                     <span class="category">category2</span>
                 </button>
     
-                <button id="btn-filter">
-                    <img src="filter-icon.png">
+                <button id="btn-filter" onclick="onPopup()">
+                    <img src="static/materials/filter-icon.png">
                 </button>
             </div>
+        </div>
+
+        <div class="popup">
+            <p>filter</p>
+            <!-- TODO: filters -->
+            <input type="range" id="created-at-scroller" name="created-at-scroller" 
+                min="2000" max="2022" 
+                value="2000" step="1" 
+                oninput="updateValue('range-value-from', this.value)">
+            <p id="range-value-from">2000</p>
+            <button id="btn-apply" class="button">
+                <span>apply</span>
+            </button>
+            <button id="btn-cancel" class="button">
+                <span>cancel</span>
+            </button>
         </div>
 
         <div id="content">
@@ -63,6 +80,23 @@
         function onHomeButton(){
             window.location.href = "/";
         }
+        function onPopup() {
+            var popup = document.getElementById("popup");
+            var rec = document.getElementById("gray-screen");
+            if (popup.style.display === 'block'){
+                popup.style.display = 'none';
+                rec.style.display = 'none';
+            } else {
+                popup.style.display = 'block';
+                rec.style.display = 'block';
+            }
+        }
+        function updateValue(id, val) {
+            document.getElementById(id).innerHTML = val;
+        }
+        $('input[type="range"]').on('input', function() {
+            $('span#a').css('margin-left', parseInt($(this).val() - 10) > 0 ? parseInt($(this).val() - 10) + '%' : '0px');
+        });
     </script>
 </body>
 </html>
