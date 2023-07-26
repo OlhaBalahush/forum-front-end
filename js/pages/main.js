@@ -4,7 +4,7 @@ import { connectWS } from "../websockets.js";
 import { readEntitiesFromFile } from "../data/entities.js";
 
 export async function fetchMainPageContent() {
-    const { users, posts, categories, comments, messages, chats } = await readEntitiesFromFile('../js/data/data.json');
+    const { users, posts, categories, comments, messages, chats } = await readEntitiesFromFile('/js/data/data.json');
     console.log(users);
     console.log(posts);
     console.log(categories);
