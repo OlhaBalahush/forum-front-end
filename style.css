@@ -2290,7 +2290,8 @@ input[type=range]:focus::-webkit-slider-thumb {
     #comment-input::placeholder,
     #btn-comment-creator,
     .comment-text,
-    .comment-created-at {
+    .comment-created-at,
+    #input-line::placeholder{
         font-size: var(--main-text-font-size-adapted);
     }
 
