@@ -1,0 +1,69 @@
+{
+    "users": [
+        {
+            "Id": 1,
+            "Email": "user1@example.com",
+            "Nickname": "user1",
+            "Password": "password1",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "Gender": "Male",
+            "DateOfBirth": "1990-01-01",
+            "Avatar": "avatar1.jpg",
+            "About": "I am user 1",
+            "Posts": [],
+            "Chats": [],
+            "CreatedAt": "2023-07-26T10:00:00Z"
+        }
+    ],
+    "posts": [
+        {
+            "Id": 1,
+            "CreatorId": 1,
+            "Title": "First Post",
+            "Text": "This is the content of the first post.",
+            "Categories": [
+                "category1",
+                "category2"
+            ],
+            "Comments": [],
+            "Likes": 20,
+            "LikedByUser": false,
+            "Image": "",
+            "CreatedAt": "2023-07-26T12:00:00Z"
+        }
+    ],
+    "comments": [
+        {
+            "Id": 1,
+            "Text": "This is a comment on the first post.",
+            "CreatorId": 2,
+            "PostId": 1,
+            "CreatedAt": "2023-07-26T13:00:00Z"
+        }
+    ],
+    "messages": [
+        {
+            "Id": 1,
+            "SenderId": 1,
+            "ReceiverId": 2,
+            "Text": "Hello!",
+            "CreatedAt": "2023-07-26T14:00:00Z"
+        }
+    ],
+    "chats": [
+        {
+            "UserOneId": 1,
+            "UserTwoId": 3,
+            "Messages": [
+                {
+                    "Id": 2,
+                    "SenderId": 1,
+                    "ReceiverId": 3,
+                    "Text": "Hi there!",
+                    "CreatedAt": "2023-07-26T15:00:00Z"
+                }
+            ]
+        }
+    ]
+}

@@ -1,102 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style.css" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-    <title>forum</title>
-</head>
-<body>
-    <div id="gray-screen" class="gray-screen"></div>
-    <div id="header">
-        <button id="btn-home" onclick="onHomeButton()">
-            <img id="logo" src="static/materials/logo.png">
-        </button>
-        <button id="btn-log-in" class="button">
-            <span>log in</span>
-        </button>
-        <button id="btn-sign-up" class="button">
-            <span>sign up</span>
-        </button>
-    </div>
-    <div id="main-part">
-        <p id="title">forum</p>
-        <div id="search-categories-filter">
-            <form class="search" autocomplete="off" action="/search" method="POST">
-                <div class="input-group">
-                    <input id="input-line" class="input-line" type="text" name="searchBar" placeholder="Search for a post">
-                </div>
-            </form>
-            <div id="categories-filter">
-                <button id="btn-category" class="btn-category">
-                    <span class="category">category1</span>
-                </button>
-                <button id="btn-category" class="btn-category">
-                    <span class="category">category2</span>
-                </button>
-    
-                <button id="btn-filter" onclick="onPopup()">
-                    <img src="static/materials/filter-icon.png">
-                </button>
-            </div>
-        </div>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./js/wload.js"></script>
+    <script type="module" src="./script.js"></script>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
-        <div class="popup">
-            <p>filter</p>
-            <!-- TODO: filters -->
-            <input type="range" id="created-at-scroller" name="created-at-scroller" 
-                min="2000" max="2022" 
-                value="2000" step="1" 
-                oninput="updateValue('range-value-from', this.value)">
-            <p id="range-value-from">2000</p>
-            <button id="btn-apply" class="button">
-                <span>apply</span>
-            </button>
-            <button id="btn-cancel" class="button">
-                <span>cancel</span>
-            </button>
-        </div>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+  </head>
 
-        <div id="content">
-            <p>some content1</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-            <p>some content</p>
-        </div>
-    </div>
-    <div id="footer"></div>
-    <script>
-        function onHomeButton(){
-            window.location.href = "/";
-        }
-        function onPopup() {
-            var popup = document.getElementById("popup");
-            var rec = document.getElementById("gray-screen");
-            if (popup.style.display === 'block'){
-                popup.style.display = 'none';
-                rec.style.display = 'none';
-            } else {
-                popup.style.display = 'block';
-                rec.style.display = 'block';
-            }
-        }
-        function updateValue(id, val) {
-            document.getElementById(id).innerHTML = val;
-        }
-        $('input[type="range"]').on('input', function() {
-            $('span#a').css('margin-left', parseInt($(this).val() - 10) > 0 ? parseInt($(this).val() - 10) + '%' : '0px');
-        });
-    </script>
-</body>
+  <body>
+    <!-- here will be page content -->
+  </body>
 </html>
